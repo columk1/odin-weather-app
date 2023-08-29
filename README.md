@@ -1,2 +1,9 @@
-# weather-app
-The Odin Project - Weather App project
+# webpack-starter
+
+##Overview
+
+A template for creating an app using webpack.
+
+## Features
+
+## To Do
