@@ -7,3 +7,6 @@ A simple web app that displays a weather forecast using asynchronous functions t
 ## Features
 
 ## To Do
+
+- Validation
+- Error Handling

@@ -2,10 +2,14 @@ import './style.css'
 
 const form = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
+const loader = document.getElementById('loading')
+const currentWeather = document.querySelector('.current-weather')
 
 async function init() {
+  displayLoading()
   const weatherData = await getWeatherData('Squamish')
-  displayData(weatherData).catch(handleError)
+  displayData(weatherData).then(hideLoading()).catch(handleError)
+  currentWeather.classList.add('active')
 }
 
 // Error handling
@@ -38,8 +42,20 @@ const displayData = async (weatherData) => {
 }
 
 const handleSearch = async (input) => {
+  displayLoading()
   const weatherData = await getWeatherData(input)
-  displayData(weatherData).catch(handleError)
+  displayData(weatherData).then(hideLoading()).catch(handleError)
+}
+
+function displayLoading() {
+  loader.classList.add('display')
+  setTimeout(() => {
+    loader.classList.remove('display')
+  }, 5000)
+}
+
+function hideLoading() {
+  loader.classList.remove('display')
 }
 
 form.addEventListener('submit', (e) => {

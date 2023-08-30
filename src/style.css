@@ -20,6 +20,7 @@ body {
 form {
   display: flex;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 [type='text'],
@@ -56,7 +57,7 @@ h1 {
 
 header {
   width: 100vw;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   padding: 1.5rem;
   background-color: rgb(236, 236, 236);
 }
@@ -70,12 +71,15 @@ header {
   width: 400px;
   margin: auto auto;
   padding: 2rem 2rem 3rem;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content auto;
   border: 1px solid grey;
   border-radius: 8px;
   background-color: rgb(236, 236, 236);
+}
+.current-weather.active {
+  display: grid;
 }
 
 .current-main {
@@ -147,4 +151,31 @@ header {
   height: 80%;
   border-right: 1px solid rgba(0, 0, 0, 0.5);
   padding-right: 3rem;
+}
+
+.loading-container {
+  margin-bottom: 1.5rem;
+}
+
+#loading {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid #f3f3f3;
+  /* border-top: 6px solid #9c41f2; */
+  border-top: 4px solid #007bff;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  animation: spin 1s infinite linear;
+}
+#loading.display {
+  visibility: visible;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
