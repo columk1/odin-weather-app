@@ -2,18 +2,19 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1rem;
+  font-weight: 200;
   color: #444;
 }
 
-#root {
-  max-width: 450px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+body {
+  background-color: #ffffff;
 }
 
 form {
@@ -49,42 +50,101 @@ button {
   border: 2px solid #007bff;
 }
 
-[type='checkbox'] {
-  margin-right: 1rem;
-  font-size: 2rem;
-}
-
 h1 {
   color: #222;
 }
 
-ul {
-  padding: 0;
+header {
+  width: 100vw;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: rgb(236, 236, 236);
 }
 
-li {
+#search-form {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.current-weather {
+  width: 400px;
+  margin: auto auto;
+  padding: 2rem 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content auto;
+  border: 1px solid grey;
+  border-radius: 8px;
+  background-color: rgb(236, 236, 236);
+}
+
+.current-main {
+  grid-column: 1 / -1;
+}
+
+.temperature {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
   display: flex;
   align-items: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #f4f4f4;
-  border-radius: 4px;
+  margin-top: 1.2rem;
 }
 
-li span {
-  display: inline-block;
-  padding: 0.5rem;
-  width: 250px;
-  border-radius: 4px;
-  border: 2px solid transparent;
+.current-inset {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  padding: 0 0 0 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
 }
 
-li span:hover {
-  background: rgba(179, 215, 255, 0.52);
+#condition {
+  font-size: 1.6rem;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0.1rem;
 }
 
-li span:focus {
-  outline: 0;
-  border: 2px solid #007bff;
-  background: rgba(179, 207, 255, 0.52);
+#location {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  font-weight: 400;
+}
+
+#temperature {
+  font-size: 8rem;
+  line-height: 5.2rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+}
+
+#temperature::after {
+  content: '\00B0 F';
+  font-size: 2rem;
+  position: absolute;
+  top: -2.2rem;
+  left: 8.9rem;
+}
+
+#feels-like {
+  position: relative;
+}
+
+#feels-like::after {
+  content: '\00B0 C';
+  font-size: 1rem;
+  position: absolute;
+  top: 1px;
+}
+
+.columnDivider {
+  height: 80%;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  padding-right: 3rem;
 }

@@ -1,8 +1,8 @@
-# webpack-starter
+# Weather App
 
 ##Overview
 
-A template for creating an app using webpack.
+A simple web app that displays a weather forecast using asynchronous functions to call a weather api.
 
 ## Features
 

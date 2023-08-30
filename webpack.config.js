@@ -10,7 +10,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: '<Project-Title>',
+      title: 'Weather App',
+      template: './src/index.html',
     }),
   ],
   output: {
